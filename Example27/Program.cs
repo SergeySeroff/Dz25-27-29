@@ -6,47 +6,18 @@
 
 // 9012 -> 12
 
-int[] CreatRendomArray(int size, int minValue, int maxValue)
+int SumNumb(int a)
 {
-    int [] newArray = new int[size]; // обязательная строка для выделения памяти!!!
-
-    for(int i = 0; i < size; i++)
-        newArray[i] = new Random().Next(minValue, maxValue + 1);
-
-    return newArray;
-}
-
-void ShowArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)  // название(метода или массив).Length <-- определит нашу длинну массива
+    int s = 0;
+    while (a > 0)
     {
-        Console.Write(array[i] + " ");
+        s = s + a % 10;
+        a = a / 10;
     }
-    Console.WriteLine();
+    return s;
 }
+Console.Write("Ввидите число: ");
+int s = Convert.ToInt32(Console.ReadLine());
 
-int SumPositive(int[] array)
-{
-    int sum = 0;
-
-    for(int i = 0; i < array.Length; i++)
-    {
-        if(array[i] > 0)
-        {
-            sum = sum + array[i];
-        }
-    }
-    return sum;
-}
-Console.Write("Imput size array: ");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.Write("Imput min possible value of element: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Imput max possible value of element: ");
-int max = Convert.ToInt32(Console.ReadLine());
-
-int[] binaryArray = CreatRendomArray(size, min, max);
-ShowArray(binaryArray);
-
-int sum = SumPositive(binaryArray);
-Console.Write(sum);
+int fin = SumNumb(s);
+Console.WriteLine(fin);

@@ -4,8 +4,8 @@
 
 void Stepen(int a, int b)
 {
-    double pow = Math.Pow(a,b);
-    Console.Write(pow);
+    double step = Math.Pow(a,b);
+    Console.Write(step);
 }
 
 Console.Write("a=");
