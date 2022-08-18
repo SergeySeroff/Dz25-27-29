@@ -5,44 +5,17 @@
 // 6, 1, 33 -> [6, 1, 33]
 
 
-int[] CreatRendomArray(int size, int minValue, int maxValue)
-
+void Main(string[] args)
 {
-    int [] newArray = new int[size]; // обязательная строка для выделения памяти!!!
-
-    for(int i = 0; i < size; i++)
-        newArray[i] = new Random().Next(minValue, maxValue + 1);
-
-    return newArray;
-}
-
-void ShowArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)  // название(метода, массива пофиг чего надо).Length <-- определит нашу длинну массива
+    int[] array = new int[8];
+    Console.Write("Вывод массива: [");
+    for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
     }
-    Console.WriteLine();
 }
+Console.Write("Введите массив чисел: ");
+int element = int.Parse(Console.ReadLine());
 
-int[] MinusArray(int[] array)
-{
-    for(int i =0; i < array.Length; i++)
-    {
-        array[i] = array[i] * (-1);
-    }
-    return array;
-}
-
-Console.Write("Imput size array: ");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.Write("Imput min possible value of element: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Imput max possible value of element: ");
-int max = Convert.ToInt32(Console.ReadLine());
-
-int[] array = CreatRendomArray(size, min, max);
-ShowArray(array);
-
-array = MinusArray(array);
-ShowArray(array);
+Main(args);
+Console.Write("]");
